@@ -111,8 +111,8 @@ body{
 }
 
 .header .logo img{
-    width: 130%;
-    height: 3.5rem;
+    width: 250%;
+    height: 4rem;
     transition: all 0.3s ease;
 }
 
