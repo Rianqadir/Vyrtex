@@ -18,6 +18,8 @@ body{
     overflow-x: hidden;
 }
 
+
+
 .heading, .clients .section-header h2, .section-head h1, .testimonials .section-header h2, .section-head-1 h4{
     margin: 2rem;
     padding-top: 6rem;
@@ -34,7 +36,7 @@ body{
     height: 2.5rem;
     width: 2.5rem;
     border-top: .4rem solid #5f0005;
-    border-left: .4rem solid #5f0033;
+    border-left: .4rem solid #5f0005;
 }
 
 .faq .heading::before, .faq .heading::after{
@@ -110,9 +112,8 @@ body{
 
 .header .logo img{
     width: 130%;
-    height: 3rem;
-    top: 0;
-    left: 0;
+    height: 3.5rem;
+    transition: all 0.3s ease;
 }
 
 .header .navbar ul{
@@ -597,15 +598,15 @@ body{
     min-width: 100vw;
     min-height: 95vh;
     text-align: center;
-    background-color: #222;
+    background-color: #aaf1e6;
 }
 
 .team .heading{
-    color: #00bfff;
+    color: #00595f;
 }
 
 .team .heading::before, .team .heading::after{
-    border-color: #00bfff;
+    border-color: #5f0005;
 }
 
 .team .row{
@@ -654,7 +655,7 @@ body{
 
 .team .row .card .info span{
     font-size: 1.8rem;
-    color: #00bfff;
+    color: #5f0005;
 }
 
 .team .row .card .info .icons a{
@@ -977,14 +978,14 @@ body{
             }
             
             .footer .copyright {
-                text-align: left;
+                text-align: right;
             }
         }
 
         .back-to-top {
             position: fixed;
             display: none;
-            background-color: #00bfff;
+            background-color: #5f0005;
             color: #ffffff;
             width: 45px;
             height: 45px;
@@ -1005,7 +1006,7 @@ body{
             color: black;
         }
 
-        .faq{
+       /*  .faq{
             min-height: 70vh;
             width: 100vw;
             text-align: center;
@@ -1070,7 +1071,7 @@ body{
             display: none;
             margin-left: 1rem;
             margin-right: 2rem;
-        }
+        } */
         
 @media (max-width: 1200px){
     .faq{
