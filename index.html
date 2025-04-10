@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Vyrtex Tech & Analytics</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -126,15 +126,17 @@
 
 <!-- Add this CSS -->
 <style>
-    .more-content {
+        .more-content {
         max-height: 0;
+        opacity: 0;
         overflow: hidden;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         margin: 20px 0;
     }
 
     .more-content.expanded {
-        max-height: 1500px; /* Adjust based on content height */
+        max-height: 200vh; /* More mobile-friendly */
+        opacity: 1;
     }
 
     .highlight-grid {
@@ -192,11 +194,28 @@
 
 <!-- Add this JavaScript -->
 <script>
-    document.querySelector('.read-more-btn').addEventListener('click', function() {
-        const content = document.querySelector('.more-content');
+    // Replace click event with this:
+    document.querySelector('.read-more-btn').addEventListener('touchstart', function(e) {
+    e.preventDefault(); // Prevent default touch behavior
+    const content = document.querySelector('.more-content');
+    content.classList.toggle('expanded');
+    this.textContent = content.classList.contains('expanded') ? 'Read Less' : 'Read More';
+}, { passive: true });
+
+// Wrap the JS code in DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.querySelector('.read-more-btn');
+    const content = document.querySelector('.more-content');
+
+    btn.addEventListener('touchstart', handleToggle);
+    btn.addEventListener('click', handleToggle);
+
+    function handleToggle(e) {
+        e.preventDefault();
         content.classList.toggle('expanded');
-        this.textContent = content.classList.contains('expanded') ? 'Read Less' : 'Read More';
-    });
+        btn.textContent = content.classList.contains('expanded') ? 'Read Less' : 'Read More';
+    }
+});
 </script>
 
   <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
@@ -482,7 +501,7 @@
   <div class="row">
       <div class="card">
           <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
+              <img src="./images/saim.jpg" alt="Team member 1">
           </div>
           <div class="info">
               <h3>Saim Alam</h3>
@@ -499,7 +518,7 @@
   <div class="row">
       <div class="card">
           <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
+              <img src="./images/alih.jpg" alt="Team member 1">
           </div>
           <div class="info">
               <h3>Ali Hasnain</h3>
@@ -678,7 +697,7 @@
                     <div class="footer-logo">
                         <img src="./images/logo7.png" alt="Vyrtex Logo" style="max-width: 200px; margin-bottom: 15px;">
                     </div>
-                    <p>Vyrtex Analytics combines cutting-edge technology with deep industry insights to deliver transformative digital solutions. We specialize in creating intelligent systems that drive growth and innovation through software development, AI integration, and data-driven strategies.</p>
+                    <p>Vyrtex combines cutting-edge technology with deep industry insights to deliver transformative digital solutions. We specialize in creating intelligent systems that drive growth and innovation through software development, AI integration, and data-driven strategies.</p>
                 </div>
             </div>
         </div>
