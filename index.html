@@ -194,29 +194,53 @@
 
 <!-- Add this JavaScript -->
 <script>
-    // Replace click event with this:
-    document.querySelector('.read-more-btn').addEventListener('touchstart', function(e) {
-    e.preventDefault(); // Prevent default touch behavior
-    const content = document.querySelector('.more-content');
-    content.classList.toggle('expanded');
-    this.textContent = content.classList.contains('expanded') ? 'Read Less' : 'Read More';
-}, { passive: true });
-
-// Wrap the JS code in DOMContentLoaded event
-document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.querySelector('.read-more-btn');
-    const content = document.querySelector('.more-content');
-
-    btn.addEventListener('touchstart', handleToggle);
-    btn.addEventListener('click', handleToggle);
-
-    function handleToggle(e) {
-        e.preventDefault();
-        content.classList.toggle('expanded');
-        btn.textContent = content.classList.contains('expanded') ? 'Read Less' : 'Read More';
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.querySelector('.read-more-btn');
+        const content = document.querySelector('.more-content');
+    
+        function handleToggle(e) {
+            e.preventDefault();
+            content.classList.toggle('expanded');
+            btn.textContent = content.classList.contains('expanded') ? 'Read Less' : 'Read More';
+        }
+    
+        // Add both touch and click events with proper handling
+        btn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            handleToggle(e);
+        }, { passive: false });
+    
+        btn.addEventListener('click', handleToggle);
+    });
+    </script>
+    
+    <style>
+    .read-more-btn {
+        touch-action: manipulation;
+        position: relative;
+        z-index: 1000;
     }
-});
-</script>
+    
+    .more-content {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .more-content.expanded {
+        max-height: 2000px; /* Increased for better mobile support */
+        opacity: 1;
+    }
+    
+    /* Ensure button remains clickable on mobile */
+    @media (max-width: 768px) {
+        .read-more-btn {
+            padding: 12px 25px;
+            font-size: 1.8rem;
+        }
+    }
+    </style>
 
   <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
     <div class="container">
@@ -471,7 +495,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="info">
               <h3>Rian Qadir</h3>
-              <span>Co-founder & CEO </span>
+              <span>Co-Founder & CEO </span>
               <div class="icons">
                  <!--  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
                   <a href="https://twitter.com/login" class="fab fa-twitter"></a>
@@ -488,7 +512,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="info">
               <h3>Syed Nisar Aoun Kazmi</h3>
-              <span>Co-founder <br>& <br> Chief Operating Officer</span>
+              <span>Co-Founder <br>& <br> Chief Operating Officer</span>
               <!-- <div class="icons">
                   <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
                   <a href="https://twitter.com/login" class="fab fa-twitter"></a>
@@ -535,11 +559,11 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="row">
     <div class="card">
         <div class="image">
-            <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
+            <img src="./images/Alis.jpg" alt="Team member 1">
         </div>
         <div class="info">
-            <h3>Abc</h3>
-            <span>Director Marketing</span>
+            <h3>Ali Salar</h3>
+            <span>Marketing Head</span>
             <div class="icons">
                 <!-- <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
                 <a href="https://twitter.com/login" class="fab fa-twitter"></a>
