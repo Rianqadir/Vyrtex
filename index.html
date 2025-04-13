@@ -190,29 +190,62 @@
         color: #00bfff;
         font-weight: bold;
     }
-    .read-more-btn {
-    touch-action: manipulation;
-    position: relative;
-    z-index: 1000;
+    .about .content {
+    padding: 0 15px;
 }
 
-.more-content {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.about h3 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
 }
 
-.more-content.expanded {
-    max-height: 2000px; /* Increased for better mobile support */
-    opacity: 1;
+.about p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
 }
 
-/* Ensure button remains clickable on mobile */
+.read-more-btn {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 2rem auto;
+    padding: 5px 0;
+    font-size: 1.5rem;
+}
+
+/* Mobile-specific adjustments */
 @media (max-width: 768px) {
-    .read-more-btn {
-        padding: 12px 25px;
-        font-size: 1.8rem;
+    .about .heading {
+        font-size: 3rem;
+        padding-top: 4rem;
+        margin: 1.5rem;
+    }
+
+    .about h3 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about p {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .highlight-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .highlight-card {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .value-proposition li {
+        font-size: 1.4rem !important;
+        margin: 10px 0;
     }
 }
 </style>
