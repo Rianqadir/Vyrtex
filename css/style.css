@@ -1391,8 +1391,8 @@ body{
     }
   }
 
-  .read-more-btn {
+  /* .read-more-btn {
     position: relative;
     z-index: 1000; /* Ensure button stays above other elements */
-    touch-action: manipulation; /* Improve touch responsiveness */
-}
+    /* touch-action: manipulation; /* Improve touch responsiveness */
+/*} */ 
