@@ -290,6 +290,236 @@
         font-size: 1.2rem;
         font-weight: 500;
     }
+
+    /* Modern Footer Styles */
+    .modern-footer {
+        background: linear-gradient(135deg, #005f5a 0%, #002e5f 100%);
+        color: white;
+        position: relative;
+        margin-top: 80px;
+    }
+
+    .footer-waves {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .footer-waves svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 100px;
+    }
+
+    .footer-content {
+        padding: 80px 0 40px 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer-brand {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-logo {
+        width: 120px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .footer-brand h3 {
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+        color: #00bfff;
+    }
+
+    .footer-brand p {
+        font-size: 1.4rem;
+        opacity: 0.8;
+        font-style: italic;
+    }
+
+    .footer-description {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        opacity: 0.9;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .social-btn {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.6rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        border: 2px solid transparent;
+    }
+
+    .social-btn:hover {
+        background: #00bfff;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 191, 255, 0.3);
+    }
+
+    .social-btn.whatsapp:hover {
+        background: #25D366;
+    }
+
+    .footer-section h4 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+        color: #00bfff;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .footer-section h4::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: #00bfff;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .footer-links a:hover {
+        color: #00bfff;
+        transform: translateX(5px);
+    }
+
+    .expertise-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .expertise-tag {
+        background: rgba(0, 191, 255, 0.2);
+        color: #00bfff;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        border: 1px solid rgba(0, 191, 255, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .expertise-tag:hover {
+        background: rgba(0, 191, 255, 0.3);
+        transform: scale(1.05);
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .contact-item i {
+        font-size: 1.8rem;
+        color: #00bfff;
+        margin-top: 5px;
+    }
+
+    .contact-item strong {
+        font-size: 1.4rem;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .contact-item span {
+        font-size: 1.3rem;
+        opacity: 0.8;
+    }
+
+    .footer-bottom {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .copyright {
+        font-size: 1.4rem;
+        margin: 0;
+        opacity: 0.8;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+    }
+
+    .footer-bottom-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 1.3rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #00bfff;
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            padding: 60px 0 30px 0;
+        }
+        
+        .footer-bottom-links {
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .footer-social {
+            margin-bottom: 30px;
+        }
+        
+        .expertise-grid {
+            justify-content: center;
+        }
+    }
     
 </style>
 
@@ -770,72 +1000,113 @@
       </div>
   </section>
  -->
- <div class="footer">
-    <div class="footer-top">
+<!-- Modern Footer -->
+<footer class="modern-footer">
+    <div class="footer-waves">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#005f5a" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+    
+    <div class="footer-content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                        <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                        <!-- <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li> -->
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Our Expertise</h4>
-                    <ul style="color: white;">
-                        <li>Web Development</li>
-                        <li>App Development</li>
-                        <li>Generative AI Solutions</li>
-                        <li>Digital Marketing</li>
-                        <li>Business Intelligence</li>
-                        <li>Data Visualization</li>
-                        <li>Predictive Analytics</li>
-                        <li>Descriptive Analytics</li>
-                        <li>Advanced Analytics</li>
-                        <li>Personalized Marketing</li>
-                        <li>Prescriptive Analytics</li>
-                        <li>AI-Powered Automation</li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                    <h4>Our Locations</h4>
-                    <p>
-                        London, United Kingdom<br>
-                        Islamabad, Pakistan<br>
-                        <strong>Phone:</strong> +923315014018<br>
+                <div class="col-lg-4 col-md-6 footer-section">
+                    <div class="footer-brand">
+                        <img src="./images/logo7.png" alt="Vyrtex Logo" class="footer-logo">
+                        <h3>Vyrtex</h3>
+                        <p>Where Tech Meets Insight</p>
+                    </div>
+                    <p class="footer-description">
+                        Vyrtex combines cutting-edge technology with deep industry insights to deliver transformative digital solutions. We specialize in creating intelligent systems that drive growth and innovation.
                     </p>
-
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                        <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                        <a href="https://www.instagram.com/vyrtex.co/"><i class="ion-logo-instagram"></i></a>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/" class="social-btn" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" class="social-btn" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/vyrtex.co/" class="social-btn" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/447440645699" class="social-btn whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 footer-newsletter">
-                    <div class="footer-logo">
-                        <img src="./images/logo7.png" alt="Vyrtex Logo" style="max-width: 200px; margin-bottom: 15px;">
+                <div class="col-lg-2 col-md-6 footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#service">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-section">
+                    <h4>Our Expertise</h4>
+                    <div class="expertise-grid">
+                        <span class="expertise-tag">Web Development</span>
+                        <span class="expertise-tag">Mobile Apps</span>
+                        <span class="expertise-tag">AI Solutions</span>
+                        <span class="expertise-tag">Data Analytics</span>
+                        <span class="expertise-tag">Business Intelligence</span>
+                        <span class="expertise-tag">Digital Marketing</span>
                     </div>
-                    <p>Vyrtex combines cutting-edge technology with deep industry insights to deliver transformative digital solutions. We specialize in creating intelligent systems that drive growth and innovation through software development, AI integration, and data-driven strategies.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>London, UK</strong><br>
+                                <span>Islamabad, Pakistan</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                <span>+923315014018</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                <span>hello@vyrtex.com</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                Copyright &copy; 2025 Vyrtex(PVT)ltd. All Rights Reserved.
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="copyright">
+                        &copy; 2025 Vyrtex (PVT) Ltd. All Rights Reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</footer>
   <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
 </body>
 </html>
