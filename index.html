@@ -520,6 +520,108 @@
             justify-content: center;
         }
     }
+
+    /* Our Clients Section Styles */
+    .clients-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 80px 0;
+        margin-top: 60px;
+    }
+
+    .clients-section .section-header h2 {
+        font-size: 3.5rem;
+        color: #00595f;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .clients-section .section-header p {
+        font-size: 1.8rem;
+        color: #666;
+        margin-bottom: 50px;
+    }
+
+    .clients-carousel {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 150px;
+    }
+
+    .clients-track {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        animation: slideLogos 30s linear infinite;
+        width: max-content;
+    }
+
+    .client-logo {
+        flex: 0 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 191, 255, 0.1);
+        min-width: 180px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .client-logo:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
+        border-color: #00bfff;
+    }
+
+    .client-logo img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        filter: grayscale(100%);
+        transition: all 0.3s ease;
+    }
+
+    .client-logo:hover img {
+        filter: grayscale(0%);
+    }
+
+    @keyframes slideLogos {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Responsive design for clients section */
+    @media (max-width: 768px) {
+        .clients-section {
+            padding: 60px 0;
+        }
+        
+        .clients-section .section-header h2 {
+            font-size: 2.8rem;
+        }
+        
+        .clients-section .section-header p {
+            font-size: 1.5rem;
+        }
+        
+        .clients-carousel {
+            gap: 30px;
+        }
+        
+        .client-logo {
+            min-width: 140px;
+            height: 100px;
+            padding: 20px;
+        }
+    }
     
 </style>
 
@@ -816,6 +918,52 @@
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="lib/lightbox/js/lightbox.min.js"></script>
 
+<!-- Our Clients Section -->
+<section class="clients-section" id="clients">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Our Clients</h2>
+            <p>Trusted by leading companies across industries</p>
+        </div>
+        <div class="clients-carousel">
+            <div class="clients-track">
+                <!-- First set of logos -->
+                <div class="client-logo">
+                    <img src="./images/clients/universal-group.png" alt="Universal Group">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/signature-health.png" alt="Signature Health">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/vape-zone.png" alt="Vape Zone">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/lc.png" alt="LC">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/prime-motors.png" alt="Prime Motors">
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="client-logo">
+                    <img src="./images/clients/universal-group.png" alt="Universal Group">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/signature-health.png" alt="Signature Health">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/vape-zone.png" alt="Vape Zone">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/lc.png" alt="LC">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/prime-motors.png" alt="Prime Motors">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="team" style="margin-top: 7rem;">
   <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
   <p></p>
@@ -1042,6 +1190,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#service">Services</a></li>
+                        <li><a href="#clients">Our Clients</a></li>
                         <li><a href="#team">Our Team</a></li>
                     </ul>
                 </div>
