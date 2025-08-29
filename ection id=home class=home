@@ -1,0 +1,10 @@
+[33md1377e0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m fix: Clean up home section and add moderate AOS animations
+[33m3ae1fda[m fix: Remove AOS (Animate On Scroll) library completely
+[33mc643287[m fix: Resolve About Us visibility and Clients section display issues
+[33mcefbf3c[m fix: Remove duplicate Our Clients section
+[33mb6fd9ec[m fix: Update clients section to use existing logos instead of placeholder files
+[33m11afa99[m feat: Add Our Clients section with new client logos above team section
+[33m3e4fa16[m refactor: Remove loading screen, contact section, and stats counter - Replace with dynamic clients carousel
+[33ma9aae74[m feat: Modernize Vyrtex website with interactive features and enhanced UX
+[33m77f4a34[m Updated website with new features/fixes
+[33mbbd90a6[m Updated website with new features/fixes

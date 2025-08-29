@@ -21,20 +21,17 @@
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo"><img src="./images/icon.png" alt=""></a>
+        <a href="#" class="logo"><img src="./images/icon.png" alt="Vyrtex"></a>
         <div class="fas fa-bars"></div>
         <nav class="navbar">
             <ul>
-                <!-- <li><a href="#home">home</a></li>-->
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li> 
                 <li><a href="#service">Services</a></li>
-                <!-- <li><a href="#portfolio">portfolio</a></li> -->
                 <li><a href="#team">Our Team</a></li>
-               
-                <!-- <li><a href="#contact">Contact</a></li> -->
                 <li>
                     <a href="https://wa.me/447440645699" class="whatsapp-link" target="_blank">
-                        Chat with us now
+                        <i class="fab fa-whatsapp"></i> Start Project
                     </a>
                 </li>
             </ul>
@@ -45,40 +42,39 @@
         .whatsapp-link {
             background: #25D366;
             color: white !important;
-            padding: 8px 20px;
+            padding: 10px 20px;
             border-radius: 25px;
             transition: all 0.3s ease;
             margin-left: 15px;
             border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
         }
     
         .whatsapp-link:hover {
             background: #128C7E;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(18, 140, 126, 0.3);
+            box-shadow: 0 8px 20px rgba(18, 140, 126, 0.4);
+            color: white !important;
         }
     </style>
-    
-    <script>
-        // Add hover effect with JavaScript
-        document.querySelectorAll('.whatsapp-link').forEach(link => {
-            link.addEventListener('mouseover', function() {
-                this.style.transform = 'scale(1.05)';
-            });
-            
-            link.addEventListener('mouseout', function() {
-                this.style.transform = 'scale(1)';
-            });
-        });
-    </script>
 
 <section id="home" class="home">
     <img src="./images/logo7.png" alt="Vyrtex Analytics Logo" class="home-logo">
     <h2>Where Tech Meets Insight</h2>
+    <p class="home-subtitle">Transforming businesses through intelligent technology solutions</p>
+    <div class="cta-buttons">
+        <a href="#about" class="cta-btn primary">Explore Our Services</a>
+        <a href="https://wa.me/447440645699" class="cta-btn secondary" target="_blank">
+            <i class="fab fa-whatsapp"></i> Start a Project
+        </a>
+    </div>
     <div class="wave wave1"></div>
     <div class="wave wave2"></div>
     <div class="wave wave3"></div>
-  </section>
+</section>
 
   <!-- In your About Us section HTML -->
 <section id="about" class="about">
@@ -191,6 +187,109 @@
         color: #00bfff;
         font-weight: bold;
     }
+
+    /* Home Section Enhancements */
+    .home-subtitle {
+        font-size: 1.8rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 20px 0 30px 0;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .cta-btn {
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.6rem;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cta-btn.primary {
+        background: #00bfff;
+        color: white;
+        border: 2px solid #00bfff;
+    }
+
+    .cta-btn.primary:hover {
+        background: transparent;
+        color: #00bfff;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 191, 255, 0.3);
+    }
+
+    .cta-btn.secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+
+    .cta-btn.secondary:hover {
+        background: white;
+        color: #005f5a;
+        transform: translateY(-3px);
+    }
+
+    /* Service Cards Enhancement */
+    .service-card {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 191, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #00bfff, #005f5a);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .service-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 191, 255, 0.15);
+    }
+
+    .service-features {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .feature-tag {
+        background: rgba(0, 191, 255, 0.1);
+        color: #00bfff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
     
 </style>
 
@@ -253,7 +352,7 @@
         </div>
         <!-- Software Development (Web & Mobile Apps) -->
         <div class="col-lg-4 col-sm-6">
-          <div class="item"> 
+          <div class="item service-card"> 
             <span class="icon feature_box_col_one"><i class="fa fa-code"></i></span>
             <h6>Software Development</h6>
             <p>From responsive web apps to cross-platform mobile solutions, we engineer scalable software tailored to your business needs. Front-end to back-end, we’ve got you covered.</p>
@@ -261,7 +360,7 @@
         </div>
         <!-- Generative AI -->
         <div class="col-lg-4 col-sm-6">
-          <div class="item"> 
+          <div class="item service-card"> 
             <span class="icon feature_box_col_two"><i class="fa fa-robot"></i></span>
             <h6>Generative AI</h6>
             <p>Build intelligent systems with our generative AI solutions. Automate workflows, generate creative content, and unlock innovation with machine learning models designed for tomorrow.</p>
@@ -269,7 +368,7 @@
         </div>
         <!-- Data Analytics -->
         <div class="col-lg-4 col-sm-6">
-          <div class="item"> 
+          <div class="item service-card"> 
             <span class="icon feature_box_col_three"><i class="fa fa-chart-line"></i></span>
             <h6>Data Analytics</h6>
             <p>Transform raw data into actionable strategies. Our analytics services uncover hidden patterns, predict trends, and drive decisions that propel your business forward.</p>

@@ -1,21 +1,42 @@
 $(document).ready(function(){
 
-     $('.fa-bars').click(function(){
+    // Smooth scrolling for navigation links
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - 80
+            }, 1000);
+        }
+    });
+
+    // Mobile menu toggle
+    $('.fa-bars').click(function(){
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
     });
 
+    // Header background change on scroll
     $(window).on('load scroll',function(){
         $('.fa-bars').removeClass('fa-times');
         $('.navbar').removeClass('nav-toggle');
 
         if($(window).scrollTop()>35)
         {
-            $('.header').css({'background':'#005f5a','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
+            $('.header').css({
+                'background':'rgba(0, 95, 90, 0.95)',
+                'backdrop-filter':'blur(10px)',
+                'box-shadow':'0 2px 20px rgba(0,0,0,0.1)'
+            });
         }
         else
         {
-            $('.header').css({'background':'none','box-shadow':'none'});
+            $('.header').css({
+                'background':'none',
+                'backdrop-filter':'none',
+                'box-shadow':'none'
+            });
         }
     });
 
