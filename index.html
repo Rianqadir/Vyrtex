@@ -577,16 +577,33 @@
         border-color: #00bfff;
     }
 
-    .client-logo img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        filter: grayscale(100%);
+    .logo-placeholder {
+        text-align: center;
+        color: #00595f;
         transition: all 0.3s ease;
     }
 
-    .client-logo:hover img {
-        filter: grayscale(0%);
+    .logo-placeholder h4 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #00595f;
+    }
+
+    .logo-placeholder p {
+        font-size: 1.2rem;
+        color: #666;
+        margin: 0;
+        opacity: 0.8;
+    }
+
+    .client-logo:hover .logo-placeholder h4 {
+        color: #00bfff;
+    }
+
+    .client-logo:hover .logo-placeholder p {
+        color: #00595f;
+        opacity: 1;
     }
 
     @keyframes slideLogos {
@@ -929,35 +946,65 @@
             <div class="clients-track">
                 <!-- First set of logos -->
                 <div class="client-logo">
-                    <img src="./images/clients/universal-group.png" alt="Universal Group">
+                    <div class="logo-placeholder">
+                        <h4>Universal Group</h4>
+                        <p>Real Estate & Energy</p>
+                    </div>
                 </div>
                 <div class="client-logo">
-                    <img src="./images/clients/signature-health.png" alt="Signature Health">
+                    <div class="logo-placeholder">
+                        <h4>Signature Health</h4>
+                        <p>Healthcare Services</p>
+                    </div>
                 </div>
                 <div class="client-logo">
-                    <img src="./images/clients/vape-zone.png" alt="Vape Zone">
+                    <div class="logo-placeholder">
+                        <h4>Vape Zone</h4>
+                        <p>Retail & E-commerce</p>
+                    </div>
                 </div>
                 <div class="client-logo">
-                    <img src="./images/clients/lc.png" alt="LC">
+                    <div class="logo-placeholder">
+                        <h4>LC</h4>
+                        <p>Technology Solutions</p>
+                    </div>
                 </div>
                 <div class="client-logo">
-                    <img src="./images/clients/prime-motors.png" alt="Prime Motors">
+                    <div class="logo-placeholder">
+                        <h4>Prime Motors</h4>
+                        <p>Automotive Industry</p>
+                    </div>
                 </div>
                 <!-- Duplicate set for seamless loop -->
                 <div class="client-logo">
-                    <img src="./images/clients/universal-group.png" alt="Universal Group">
+                    <div class="logo-placeholder">
+                        <h4>Universal Group</h4>
+                        <p>Real Estate & Energy</p>
+                    </div>
                 </div>
                 <div class="client-logo">
-                    <img src="./images/clients/signature-health.png" alt="Signature Health">
+                    <div class="logo-placeholder">
+                        <h4>Signature Health</h4>
+                        <p>Healthcare Services</p>
+                    </div>
                 </div>
                 <div class="client-logo">
-                    <img src="./images/clients/vape-zone.png" alt="Vape Zone">
+                    <div class="logo-placeholder">
+                        <h4>Vape Zone</h4>
+                        <p>Retail & E-commerce</p>
+                    </div>
                 </div>
                 <div class="client-logo">
-                    <img src="./images/clients/lc.png" alt="LC">
+                    <div class="logo-placeholder">
+                        <h4>LC</h4>
+                        <p>Technology Solutions</p>
+                    </div>
                 </div>
                 <div class="client-logo">
-                    <img src="./images/clients/prime-motors.png" alt="Prime Motors">
+                    <div class="logo-placeholder">
+                        <h4>Prime Motors</h4>
+                        <p>Automotive Industry</p>
+                    </div>
                 </div>
             </div>
         </div>
