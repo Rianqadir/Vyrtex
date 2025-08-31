@@ -541,20 +541,21 @@
         margin-bottom: 50px;
     }
 
-    .clients-carousel {
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-        height: 150px;
-    }
+         .clients-carousel {
+         overflow: hidden;
+         position: relative;
+         width: 100%;
+         height: 150px;
+     }
 
-         .clients-track {
+     .clients-track {
          display: flex;
          align-items: center;
          gap: 60px;
          animation: slideLogos 30s linear infinite;
          width: max-content;
          will-change: transform;
+         position: relative;
      }
 
          .client-logo {
@@ -585,11 +586,21 @@
          object-fit: contain;
          filter: grayscale(0%);
          transition: all 0.3s ease;
+         display: block;
+         max-width: 100%;
+         max-height: 100%;
      }
 
      .client-logo:hover img {
          filter: grayscale(0%);
          transform: scale(1.05);
+     }
+
+     /* Fallback for images that don't load */
+     .client-logo img:not([src]), 
+     .client-logo img[src=""],
+     .client-logo img[src*="undefined"] {
+         display: none;
      }
 
     .logo-fallback {
@@ -626,7 +637,7 @@
              transform: translateX(0);
          }
          100% {
-             transform: translateX(calc(-50% - 30px));
+             transform: translateX(-50%);
          }
      }
 
@@ -657,27 +668,42 @@
     
 </style>
 
-<!-- Add this JavaScript -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const btn = document.querySelector('.read-more-btn');
-        const content = document.querySelector('.more-content');
-    
-        function handleToggle(e) {
-            e.preventDefault();
-            content.classList.toggle('expanded');
-            btn.textContent = content.classList.contains('expanded') ? 'Read Less' : 'Read More';
-        }
-    
-        // Add both touch and click events with proper handling
-        btn.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-            handleToggle(e);
-        }, { passive: false });
-    
-        btn.addEventListener('click', handleToggle);
-    });
-    </script>
+ <!-- Add this JavaScript -->
+ <script>
+     document.addEventListener('DOMContentLoaded', function() {
+         const btn = document.querySelector('.read-more-btn');
+         const content = document.querySelector('.more-content');
+     
+         function handleToggle(e) {
+             e.preventDefault();
+             content.classList.toggle('expanded');
+             btn.textContent = content.classList.contains('expanded') ? 'Read Less' : 'Read More';
+         }
+     
+         // Add both touch and click events with proper handling
+         btn.addEventListener('touchstart', function(e) {
+             e.preventDefault();
+             handleToggle(e);
+         }, { passive: false });
+     
+         btn.addEventListener('click', handleToggle);
+
+         // Ensure client logos load properly
+         const clientLogos = document.querySelectorAll('.client-logo img');
+         clientLogos.forEach(img => {
+             img.addEventListener('load', function() {
+                 this.style.opacity = '1';
+             });
+             img.addEventListener('error', function() {
+                 console.error('Failed to load image:', this.src);
+                 this.style.display = 'none';
+             });
+             // Set initial opacity
+             img.style.opacity = '0';
+             img.style.transition = 'opacity 0.3s ease';
+         });
+     });
+     </script>
     
     <style>
     .read-more-btn {
