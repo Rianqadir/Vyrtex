@@ -555,20 +555,24 @@
          position: relative;
          width: 100%;
          height: 170px;
+         display: block;
      }
 
      .clients-track {
-         display: flex;
+         display: flex !important;
          align-items: center;
          gap: 60px;
          animation: slideLogos 30s linear infinite;
          width: max-content;
          will-change: transform;
          position: relative;
+         flex-wrap: nowrap !important;
+         flex-direction: row !important;
+         white-space: nowrap;
      }
 
          .client-logo {
-         flex: 0 0 auto;
+         flex: 0 0 auto !important;
          background: white;
          padding: 15px;
          border-radius: 15px;
@@ -577,10 +581,13 @@
          border: 1px solid rgba(0, 191, 255, 0.1);
          min-width: 220px;
          height: 120px;
-         display: flex;
+         display: flex !important;
          align-items: center;
          justify-content: center;
          overflow: hidden;
+         white-space: nowrap;
+         float: none !important;
+         clear: none !important;
      }
 
     .client-logo:hover {
